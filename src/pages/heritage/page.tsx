@@ -8,7 +8,7 @@ export default function HeritagePage() {
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
       <Navbar />
-
+      
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
         <div className="absolute inset-0">
@@ -21,14 +21,13 @@ export default function HeritagePage() {
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-[0.3em] text-white/90 mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] text-white/90 mb-4">
               {t('common.heritage.label')}
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 break-words">
               {t('common.heritage.title')}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
               {t('common.heritage.subtitle')}
             </p>
           </div>
@@ -47,14 +46,11 @@ export default function HeritagePage() {
               />
             </div>
             <div>
-
-
-              <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 mb-6 break-words">
-
+              <h2 className="font-serif text-4xl text-gray-900 mb-6">
                 {t('common.heritage.father.title')}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              {t('common.heritage.father.description')}
+                {t('common.heritage.father.description')}
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -95,7 +91,7 @@ export default function HeritagePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 mb-6 break-words">
+              <h2 className="font-serif text-4xl text-gray-900 mb-6">
                 {t('common.heritage.sons.title')}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -108,8 +104,7 @@ export default function HeritagePage() {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl text-gray-900 mb-2">Formation d'Excellence</h3>
-                    <p className="text-gray-600">Diplômés des plus prestigieuses écoles de gemmologie, maîtrisant les
-                      techniques les plus avancées de l'analyse des pierres.</p>
+                    <p className="text-gray-600">Diplômés des plus prestigieuses écoles de gemmologie, maîtrisant les techniques les plus avancées de l'analyse des pierres.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -118,8 +113,7 @@ export default function HeritagePage() {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl text-gray-900 mb-2">Innovation Continue</h3>
-                    <p className="text-gray-600">Intégration des technologies modernes tout en préservant l'authenticité
-                      et les valeurs traditionnelles de l'atelier familial.</p>
+                    <p className="text-gray-600">Intégration des technologies modernes tout en préservant l'authenticité et les valeurs traditionnelles de l'atelier familial.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -128,8 +122,7 @@ export default function HeritagePage() {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl text-gray-900 mb-2">Réseau International</h3>
-                    <p className="text-gray-600">Connexions établies avec les meilleurs fournisseurs et collectionneurs
-                      à travers le monde pour sourcer les gemmes les plus rares.</p>
+                    <p className="text-gray-600">Connexions établies avec les meilleurs fournisseurs et collectionneurs à travers le monde pour sourcer les gemmes les plus rares.</p>
                   </div>
                 </div>
               </div>

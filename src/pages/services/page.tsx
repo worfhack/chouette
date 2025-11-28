@@ -91,13 +91,13 @@ export default function ServicesPage() {
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-[0.3em] text-white/90 mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] text-white/90 mb-4">
               {t('common.services.label')}
             </p>
-            <h1 className="font-serif text-5xl lg:text-6xl text-white mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 break-words">
               {t('common.services.title')}
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
               {t('common.services.description')}
             </p>
           </div>

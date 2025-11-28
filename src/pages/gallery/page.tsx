@@ -109,10 +109,10 @@ export default function GalleryPage() {
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="text-sm tracking-[0.3em] text-white/90 mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] text-white/90 mb-4">
               {t('common.gallery.label')}
             </p>
-            <h1 className="font-serif text-5xl lg:text-6xl text-white mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 break-words">
               {t('common.gallery.title')}
             </h1>
           </div>

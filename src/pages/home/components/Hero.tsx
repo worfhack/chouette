@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <img
@@ -35,16 +35,16 @@ export default function Hero() {
         </div>
 
         {/* Title */}
-        <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-wide">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 tracking-wide">
           Les Pierres de la Chouette
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-white/90 mb-4 font-light tracking-wide">
+        <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-4 font-light tracking-wide">
           Gemmologie Artisanale & Joaillerie Sur Mesure
         </p>
 
-        <p className="text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
           Atelier familial parisien depuis deux générations, spécialisé dans l'expertise de pierres précieuses et la création de bijoux d'exception
         </p>
 

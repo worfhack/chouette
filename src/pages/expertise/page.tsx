@@ -73,13 +73,13 @@ export default function ExpertisePage() {
           <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full mb-6">
             <span className="text-xs font-medium tracking-widest text-white">{t('expertise.label')}</span>
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 break-words">
             {t('expertise.title')}
           </h1>
-          <p className="text-lg text-white/90 font-light leading-relaxed mb-4">
+          <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed mb-4">
             {t('expertise.subtitle')}
           </p>
-          <p className="text-base text-white/80 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-3xl mx-auto">
             {t('expertise.intro')}
           </p>
         </div>
@@ -138,23 +138,24 @@ export default function ExpertisePage() {
                     {t(`expertise.${selectedStone}.origin`)}
                   </span>
                 </div>
-                <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 mb-6 break-words">
-                    {currentStone?.name}
-                  </h2>
 
-                  <p className="text-base text-slate-700 leading-relaxed mb-8">
-                    {t(`expertise.${selectedStone}.description`)}
+                <h2 className="font-serif text-4xl font-bold text-slate-900 mb-6">
+                  {currentStone?.name}
+                </h2>
+
+                <p className="text-base text-slate-700 leading-relaxed mb-8">
+                  {t(`expertise.${selectedStone}.description`)}
+                </p>
+
+                <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
+                  <h3 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                    <i className="ri-file-list-3-line text-lg"></i>
+                    Caractéristiques Techniques
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {t(`expertise.${selectedStone}.characteristics`)}
                   </p>
-
-                  <div className="bg-white/60 rounded-xl p-6 backdrop-blur-sm">
-                    <h3 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                      <i className="ri-file-list-3-line text-lg"></i>
-                      Caractéristiques Techniques
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {t(`expertise.${selectedStone}.characteristics`)}
-                    </p>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -165,14 +166,13 @@ export default function ExpertisePage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 mb-6 break-words">
-
-                {t('expertise.process.title')}
-              </h2>
+            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-4">
+              {t('expertise.process.title')}
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {['step1', 'step2', 'step3', 'step4'].map((step, index) => (
+            {['step1', 'step2', 'step3', 'step4'].map((step, index) => (
               <div key={step} className="relative">
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 h-full">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center mb-6">
@@ -200,7 +200,7 @@ export default function ExpertisePage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl text-3xl font-bold text-slate-900 mb-4">
+            <h2 className="font-serif text-4xl font-bold text-slate-900 mb-4">
               {t('expertise.commitment.title')}
             </h2>
           </div>
@@ -230,7 +230,7 @@ export default function ExpertisePage() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl text-3xl font-bold text-white mb-6">
+          <h2 className="font-serif text-4xl font-bold text-white mb-6">
             Faites Expertiser Vos Pierres
           </h2>
           <p className="text-lg text-slate-300 mb-10 leading-relaxed">
