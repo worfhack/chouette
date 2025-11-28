@@ -34,7 +34,6 @@ export default function CollectionsPage() {
         </div>
       </section>
 
-      {/* Precious Stones Collection */}
       <section className="py-12 md:py-20 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 md:mb-32">
