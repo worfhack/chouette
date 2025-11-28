@@ -1,7 +1,7 @@
 export const common = {
   nav: {
     home: 'Accueil',
-    heritage: 'Héritage',
+    heritage: 'Notre Histoire',
     expertise: 'Expertise',
     services: 'Services',
     collections: 'Collections',

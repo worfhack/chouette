@@ -1,102 +1,68 @@
-const services = [
-  {
-    icon: 'ri-search-eye-line',
-    title: 'Expertise & Identification',
-    description: 'Analyse complète de vos pierres précieuses avec rapport détaillé incluant origine, traitements éventuels, et estimation de valeur. Utilisation d\'équipements de pointe pour une identification précise.',
-    features: ['Certificat d\'authenticité', 'Analyse spectroscopique', 'Photographies professionnelles']
-  },
-  {
-    icon: 'ri-compass-3-line',
-    title: 'Sourcing de Pierres',
-    description: 'Recherche et acquisition de pierres précieuses selon vos critères spécifiques. Accès à notre réseau international de fournisseurs éthiques pour trouver la gemme parfaite pour votre projet.',
-    features: ['Réseau mondial', 'Sourcing éthique', 'Sélection personnalisée']
-  },
-  {
-    icon: 'ri-pencil-ruler-2-line',
-    title: 'Création Sur Mesure',
-    description: 'Conception et réalisation de bijoux uniques adaptés à vos désirs. De l\'esquisse initiale à la pièce finale, chaque étape est réalisée avec soin dans notre atelier parisien.',
-    features: ['Design personnalisé', 'Fabrication artisanale', 'Suivi de projet']
-  },
-  {
-    icon: 'ri-tools-line',
-    title: 'Restauration & Transformation',
-    description: 'Remise en état de bijoux anciens et transformation de pièces héritées. Nous redonnons vie à vos bijoux de famille tout en préservant leur histoire et leur valeur sentimentale.',
-    features: ['Restauration délicate', 'Modernisation', 'Conservation du patrimoine']
-  },
-  {
-    icon: 'ri-graduation-cap-line',
-    title: 'Conseil & Formation',
-    description: 'Accompagnement personnalisé pour collectionneurs et passionnés. Sessions privées pour apprendre à reconnaître et apprécier les pierres précieuses, comprendre leur valeur et leur entretien.',
-    features: ['Consultation privée', 'Initiation gemmologie', 'Conseils d\'achat']
-  },
-  {
-    icon: 'ri-shield-check-line',
-    title: 'Évaluation & Assurance',
-    description: 'Estimation professionnelle de vos bijoux et pierres pour assurance ou succession. Rapports conformes aux standards internationaux, reconnus par les compagnies d\'assurance.',
-    features: ['Rapport certifié', 'Mise à jour valeur', 'Documentation complète']
-  }
-];
-
 export default function Services() {
+  const services = [
+    {
+      title: 'Création Sur Mesure',
+      description: 'Conception et réalisation de bijoux uniques selon vos désirs, de l\'esquisse à la pièce finale.',
+      image: 'https://readdy.ai/api/search-image?query=Elegant%20jewelry%20design%20sketch%20on%20white%20paper%20with%20precious%20gemstones%20and%20gold%20tools%20on%20velvet%20surface%20luxury%20Parisian%20atelier%20setting%20soft%20natural%20lighting%20professional%20craftsmanship%20minimalist%20aesthetic%20refined%20composition&width=600&height=400&seq=service-001&orientation=landscape'
+    },
+    {
+      title: 'Restauration de Bijoux',
+      description: 'Remise en état et restauration de vos bijoux anciens avec respect des techniques traditionnelles.',
+      image: 'https://readdy.ai/api/search-image?query=Antique%20jewelry%20restoration%20process%20with%20vintage%20gemstone%20ring%20being%20carefully%20repaired%20by%20expert%20hands%20precision%20tools%20on%20velvet%20mat%20luxury%20Parisian%20workshop%20soft%20lighting%20professional%20craftsmanship%20elegant%20composition&width=600&height=400&seq=service-002&orientation=landscape'
+    },
+    {
+      title: 'Transformation',
+      description: 'Modernisation de vos bijoux familiaux en créations contemporaines tout en préservant leur essence.',
+      image: 'https://readdy.ai/api/search-image?query=Modern%20jewelry%20transformation%20process%20showing%20before%20and%20after%20vintage%20gemstone%20pieces%20being%20redesigned%20into%20contemporary%20jewelry%20luxury%20Parisian%20atelier%20soft%20natural%20light%20elegant%20minimalist%20aesthetic%20professional%20craftsmanship&width=600&height=400&seq=service-003&orientation=landscape'
+    }
+  ];
+
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-5xl md:text-6xl font-light text-gray-900 mb-6">
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-white">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 break-words">
             Nos Services
           </h2>
-          <div className="w-24 h-1 bg-gray-900 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Un accompagnement complet pour tous vos besoins en gemmologie et joaillerie, de l'expertise à la création sur mesure
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Un savoir-faire artisanal au service de vos projets les plus précieux
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white rounded-lg p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-900"
+              className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-16 h-16 mb-6 flex items-center justify-center bg-gray-900 text-white rounded-lg group-hover:scale-110 transition-transform duration-300">
-                <i className={`${service.icon} text-3xl`}></i>
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              
-              <h3 className="font-serif text-2xl font-medium text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                    <i className="ri-check-line text-gray-900"></i>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-gray-900 mb-3 md:mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-gray-900 rounded-2xl p-12">
-          <h3 className="font-serif text-3xl font-medium text-white mb-4">
-            Un Projet en Tête ?
-          </h3>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Prenez rendez-vous pour une consultation privée dans notre atelier parisien. Nous étudierons ensemble votre projet et vous conseillerons sur les meilleures options.
-          </p>
+        <div className="text-center">
           <a
-            href="/rendez-vous"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-medium text-sm tracking-wider hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap rounded-sm"
+            href="/services"
+            className="inline-block px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white font-medium text-xs md:text-sm tracking-wider hover:bg-gray-800 transition-all duration-300 cursor-pointer whitespace-nowrap rounded-sm"
           >
-            PRENDRE RENDEZ-VOUS
-            <i className="ri-calendar-line"></i>
+            DÉCOUVRIR TOUS NOS SERVICES
           </a>
         </div>
       </div>

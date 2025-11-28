@@ -1,240 +1,65 @@
-import { useState } from 'react';
-
 export default function Appointment() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    date: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const formBody = new URLSearchParams();
-      Object.entries(formData).forEach(([key, value]) => {
-        formBody.append(key, value);
-      });
-
-      const response = await fetch('FORM_SUBMIT_URL_PLACEHOLDER', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formBody.toString()
-      });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          date: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div>
-            <h2 className="font-serif text-5xl md:text-6xl font-light text-gray-900 mb-6">
-              Prendre Rendez-vous
-            </h2>
-            <div className="w-24 h-1 bg-gray-900 mb-8"></div>
-            
-            <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Notre atelier fonctionne sur rendez-vous uniquement afin de vous garantir un accueil personnalisé et une attention exclusive. Chaque consultation est une expérience unique où nous prenons le temps d'écouter vos besoins et de vous conseiller.
-            </p>
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-br from-amber-50 to-gray-50">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="mb-6 md:mb-8 flex justify-center">
+          <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white rounded-full shadow-md">
+            <i className="ri-calendar-check-line text-3xl md:text-4xl text-amber-700"></i>
+          </div>
+        </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex items-center justify-center bg-gray-900 text-white rounded-lg flex-shrink-0">
-                  <i className="ri-map-pin-line text-xl"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Adresse</h3>
-                  <p className="text-gray-600 text-sm">Paris, France</p>
-                  <p className="text-gray-500 text-xs mt-1">Adresse exacte communiquée lors de la prise de rendez-vous</p>
-                </div>
-              </div>
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 break-words">
+          Prenez Rendez-vous
+        </h2>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex items-center justify-center bg-gray-900 text-white rounded-lg flex-shrink-0">
-                  <i className="ri-time-line text-xl"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Horaires</h3>
-                  <p className="text-gray-600 text-sm">Lundi - Vendredi : 10h00 - 18h00</p>
-                  <p className="text-gray-500 text-xs mt-1">Sur rendez-vous uniquement</p>
-                </div>
-              </div>
+        <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+          Notre atelier vous accueille sur rendez-vous pour une consultation personnalisée. Que ce soit pour une expertise, une création sur mesure ou simplement découvrir nos collections, nous serons ravis de vous recevoir.
+        </p>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex items-center justify-center bg-gray-900 text-white rounded-lg flex-shrink-0">
-                  <i className="ri-mail-line text-xl"></i>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Contact</h3>
-                  <p className="text-gray-600 text-sm">contact@lespierresdelachouette.fr</p>
-                  <p className="text-gray-600 text-sm">+33 1 XX XX XX XX</p>
-                </div>
-              </div>
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-10">
+          <a
+            href="/rendez-vous"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white font-medium text-xs md:text-sm tracking-wider hover:bg-gray-800 transition-all duration-300 cursor-pointer whitespace-nowrap rounded-sm"
+          >
+            RÉSERVER UN RENDEZ-VOUS
+          </a>
+          <a
+            href="tel:+33142778899"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 font-medium text-xs md:text-sm tracking-wider hover:bg-gray-900 hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap rounded-sm"
+          >
+            NOUS APPELER
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white rounded-full shadow-sm flex-shrink-0">
+              <i className="ri-map-pin-line text-lg md:text-xl text-amber-700"></i>
+            </div>
+            <div>
+              <h3 className="text-sm md:text-base font-medium text-gray-900 mb-1 md:mb-2">Adresse</h3>
+              <p className="text-xs md:text-sm text-gray-600">15 Rue des Francs-Bourgeois<br />75004 Paris</p>
             </div>
           </div>
 
-          {/* Right Form */}
-          <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
-            <form id="appointment-form" data-readdy-form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-                  Nom complet *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors"
-                  placeholder="Votre nom"
-                />
-              </div>
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white rounded-full shadow-sm flex-shrink-0">
+              <i className="ri-time-line text-lg md:text-xl text-amber-700"></i>
+            </div>
+            <div>
+              <h3 className="text-sm md:text-base font-medium text-gray-900 mb-1 md:mb-2">Horaires</h3>
+              <p className="text-xs md:text-sm text-gray-600">Lun-Ven: 10h-18h<br />Sam: Sur rendez-vous</p>
+            </div>
+          </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors"
-                  placeholder="votre@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
-                  Téléphone *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors"
-                  placeholder="+33 X XX XX XX XX"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">
-                  Service souhaité *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors cursor-pointer"
-                >
-                  <option value="">Sélectionnez un service</option>
-                  <option value="expertise">Expertise & Identification</option>
-                  <option value="sourcing">Sourcing de Pierres</option>
-                  <option value="creation">Création Sur Mesure</option>
-                  <option value="restauration">Restauration & Transformation</option>
-                  <option value="conseil">Conseil & Formation</option>
-                  <option value="evaluation">Évaluation & Assurance</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="date" className="block text-sm font-medium text-gray-900 mb-2">
-                  Date souhaitée *
-                </label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  maxLength={500}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-gray-900 transition-colors resize-none"
-                  placeholder="Décrivez brièvement votre projet ou vos besoins..."
-                ></textarea>
-                <p className="text-xs text-gray-500 mt-1">{formData.message.length}/500 caractères</p>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gray-900 text-white font-medium text-sm tracking-wider hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap rounded-sm"
-              >
-                {isSubmitting ? 'ENVOI EN COURS...' : 'ENVOYER LA DEMANDE'}
-              </button>
-
-              {submitStatus === 'success' && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-800">
-                  Votre demande a été envoyée avec succès. Nous vous contacterons rapidement.
-                </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
-                  Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.
-                </div>
-              )}
-            </form>
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white rounded-full shadow-sm flex-shrink-0">
+              <i className="ri-phone-line text-lg md:text-xl text-amber-700"></i>
+            </div>
+            <div>
+              <h3 className="text-sm md:text-base font-medium text-gray-900 mb-1 md:mb-2">Contact</h3>
+              <p className="text-xs md:text-sm text-gray-600">+33 1 42 77 88 99<br />contact@lespierresdelachouette.fr</p>
+            </div>
           </div>
         </div>
       </div>

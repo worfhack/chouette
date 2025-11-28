@@ -1,103 +1,84 @@
-const collections = [
-  {
-    title: 'Saphirs d\'Exception',
-    subtitle: 'Cachemire & Birmanie',
-    description: 'Collection exclusive de saphirs bleus provenant des mines légendaires du Cachemire et de Birmanie, sélectionnés pour leur couleur veloutée unique',
-    image: 'https://readdy.ai/api/search-image?query=Stunning%20collection%20of%20brilliant%20blue%20Kashmir%20sapphires%20on%20white%20velvet%20display%20various%20cuts%20and%20sizes%20professional%20jewelry%20photography%20museum%20quality%20gemstones%20deep%20cornflower%20blue%20color%20luxury%20presentation&width=800&height=600&seq=collection-sapphire-001&orientation=landscape',
-    pieces: '12 pièces disponibles'
-  },
-  {
-    title: 'Rubis Birmans',
-    subtitle: 'Sang de Pigeon',
-    description: 'Rubis birmans non chauffés présentant la couleur "sang de pigeon" tant recherchée, avec une fluorescence naturelle exceptionnelle',
-    image: 'https://readdy.ai/api/search-image?query=Exquisite%20collection%20of%20pigeon%20blood%20red%20Burmese%20rubies%20on%20white%20silk%20fabric%20brilliant%20cuts%20intense%20red%20color%20professional%20gemstone%20photography%20luxury%20precious%20stones%20museum%20display%20quality&width=800&height=600&seq=collection-ruby-001&orientation=landscape',
-    pieces: '8 pièces disponibles'
-  },
-  {
-    title: 'Émeraudes Colombiennes',
-    subtitle: 'Muzo & Chivor',
-    description: 'Émeraudes colombiennes des mines de Muzo et Chivor, réputées pour leur vert intense et leur transparence cristalline remarquable',
-    image: 'https://readdy.ai/api/search-image?query=Beautiful%20collection%20of%20Colombian%20emeralds%20on%20white%20background%20various%20emerald%20cuts%20vivid%20green%20color%20professional%20jewelry%20photography%20high%20clarity%20gemstones%20luxury%20presentation%20museum%20quality&width=800&height=600&seq=collection-emerald-001&orientation=landscape',
-    pieces: '15 pièces disponibles'
-  },
-  {
-    title: 'Créations Joaillières',
-    subtitle: 'Pièces Uniques',
-    description: 'Bijoux sur mesure créés dans notre atelier, alliant design contemporain et savoir-faire traditionnel, chaque pièce raconte une histoire unique',
-    image: 'https://readdy.ai/api/search-image?query=Elegant%20custom%20made%20jewelry%20pieces%20on%20white%20marble%20surface%20contemporary%20design%20featuring%20precious%20gemstones%20gold%20settings%20professional%20jewelry%20photography%20luxury%20craftsmanship%20unique%20artisanal%20creations&width=800&height=600&seq=collection-jewelry-001&orientation=landscape',
-    pieces: 'Sur commande'
-  }
-];
-
 export default function Collections() {
+  const collections = [
+    {
+      title: 'Saphirs de Ceylan',
+      description: 'Collection exclusive de saphirs bleus provenant des mines historiques du Sri Lanka',
+      image: 'https://readdy.ai/api/search-image?query=Stunning%20blue%20Ceylon%20sapphire%20gemstone%20on%20white%20velvet%20display%20luxury%20jewelry%20presentation%20soft%20natural%20lighting%20professional%20photography%20minimalist%20elegant%20composition%20Parisian%20atelier%20aesthetic%20refined%20precious%20stone&width=600&height=400&seq=collection-001&orientation=landscape',
+      link: '/collections'
+    },
+    {
+      title: 'Rubis de Birmanie',
+      description: 'Rubis pigeon blood d\'exception aux couleurs profondes et intenses',
+      image: 'https://readdy.ai/api/search-image?query=Magnificent%20pigeon%20blood%20Burmese%20ruby%20gemstone%20on%20white%20velvet%20elegant%20display%20luxury%20jewelry%20presentation%20soft%20natural%20lighting%20professional%20photography%20minimalist%20composition%20Parisian%20atelier%20aesthetic%20refined%20precious%20stone&width=600&height=400&seq=collection-002&orientation=landscape',
+      link: '/collections'
+    },
+    {
+      title: 'Émeraudes de Colombie',
+      description: 'Émeraudes aux verts profonds issues des mines légendaires de Muzo',
+      image: 'https://readdy.ai/api/search-image?query=Beautiful%20Colombian%20emerald%20gemstone%20on%20white%20velvet%20luxury%20display%20deep%20green%20color%20soft%20natural%20lighting%20professional%20jewelry%20photography%20minimalist%20elegant%20composition%20Parisian%20atelier%20aesthetic%20refined%20precious%20stone&width=600&height=400&seq=collection-003&orientation=landscape',
+      link: '/collections'
+    },
+    {
+      title: 'Créations Joaillières',
+      description: 'Bijoux uniques conçus et réalisés dans notre atelier parisien',
+      image: 'https://readdy.ai/api/search-image?query=Exquisite%20custom%20jewelry%20pieces%20with%20precious%20gemstones%20elegant%20display%20on%20white%20velvet%20luxury%20Parisian%20craftsmanship%20soft%20natural%20lighting%20professional%20photography%20minimalist%20aesthetic%20refined%20composition%20unique%20creations&width=600&height=400&seq=collection-004&orientation=landscape',
+      link: '/creations-uniques'
+    }
+  ];
+
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-5xl md:text-6xl font-light text-gray-900 mb-6">
-            Nos Collections
+    <section className="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 md:mb-6 break-words">
+            Collections & Créations
           </h2>
-          <div className="w-24 h-1 bg-gray-900 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Découvrez notre sélection de pierres précieuses d'exception et nos créations joaillières uniques, fruit de notre expertise et de notre passion
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Découvrez nos pierres d'exception et nos créations joaillières uniques
           </p>
         </div>
 
-        {/* Collections Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           {collections.map((collection, index) => (
-            <div
+            <a
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+              href={collection.link}
+              className="group bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
             >
-              {/* Image */}
-              <div className="relative w-full h-96 overflow-hidden">
+              <div className="w-full h-56 md:h-64 overflow-hidden">
                 <img
                   src={collection.image}
                   alt={collection.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               </div>
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <div className="mb-3">
-                  <p className="text-sm font-medium tracking-wider text-white/80 mb-2">
-                    {collection.subtitle}
-                  </p>
-                  <h3 className="font-serif text-3xl font-medium mb-3">
-                    {collection.title}
-                  </h3>
-                </div>
-                
-                <p className="text-sm text-white/90 leading-relaxed mb-4">
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-serif font-medium text-gray-900 mb-3 md:mb-4">
+                  {collection.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   {collection.description}
                 </p>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium tracking-wider text-white/70">
-                    {collection.pieces}
-                  </span>
-                  <button className="flex items-center gap-2 text-sm font-medium text-white hover:gap-3 transition-all cursor-pointer whitespace-nowrap">
-                    Découvrir
-                    <i className="ri-arrow-right-line"></i>
-                  </button>
-                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
           <a
             href="/collections"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-medium text-sm tracking-wider hover:bg-gray-800 transition-colors cursor-pointer whitespace-nowrap rounded-sm"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white font-medium text-xs md:text-sm tracking-wider hover:bg-gray-800 transition-all duration-300 cursor-pointer whitespace-nowrap rounded-sm"
           >
-            VOIR TOUTES LES COLLECTIONS
-            <i className="ri-arrow-right-line"></i>
+            VOIR LES PIERRES
+          </a>
+          <a
+            href="/creations-uniques"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 font-medium text-xs md:text-sm tracking-wider hover:bg-gray-900 hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap rounded-sm"
+          >
+            VOIR LES CRÉATIONS
           </a>
         </div>
       </div>
