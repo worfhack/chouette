@@ -212,19 +212,8 @@ export default function CreationsUniquesPage() {
                     </p>
                   </div>
 
-                  {/* Price & CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <span className="text-sm sm:text-base font-medium text-gray-900">
-                      {creation.price}
-                    </span>
-                    <a
-                      href="/rendez-vous"
-                      className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-900 hover:gap-3 transition-all cursor-pointer whitespace-nowrap"
-                    >
-                      Demander un devis
-                      <i className="ri-arrow-right-line"></i>
-                    </a>
-                  </div>
+
+
                 </div>
               </div>
             ))}
